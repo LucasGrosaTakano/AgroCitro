@@ -26,22 +26,46 @@ cd agrocitro
 
 ### 3. Instale as Dependências
 Backend
+```bash
+cd database
+npm install
+```
 Frontend e Servidor
+```bash
+cd ../js
+npm install
+```
 ### 4. Configuração do Banco de Dados
 Acesse o MySQL/MariaDB:
-
+```bash
+mysql -u root -p
+```
 Execute o script SQL para criar o banco de dados e as tabelas:
-
+```bash
+SOURCE c:/Users/49084375807/Downloads/AgroCitro-main/database/AgroCitro_Banco (2).sq
+```
 Certifique-se de que o usuário citro_user tenha as permissões adequadas:
+```bash
+GRANT ALL PRIVILEGES ON agrocitro_bd.* TO 'citro_user'@'%' IDENTIFIED BY 'senhaforte123!';
+FLUSH PRIVILEGES;
+```
 
-1 vulnerability
 ### 5. Configuração de Variáveis de Ambiente
 Crie um arquivo .env na pasta js com as seguintes variáveis:
+```bash
+DB_HOST=10.111.9.90
+DB_USER=citro_user
+DB_PASSWORD=senhaforte123!
+DB_NAME=agrocitro_bd
+SERVER_PORT=3000
+```
 
 🚀 Execução do Projeto
 #### 1. Inicie o Servidor
 Na pasta js, execute:
-
+```bash
+npm start
+```
 O servidor estará disponível em: http://10.111.9.90:3000
 
 #### 2. Acesse o Frontend
